@@ -4,13 +4,13 @@ import Express from 'express';
 import cors from 'cors';
 
 const app = Express();
-app.use(cors({ origin: 'http://localhost:5173', credentials: true }));
+app.use(cors({ origin: '*', credentials: true }));
 
 const server = createServer(app);
 
 const io = new Server(server, {
   cors: {
-    origin: 'http://localhost:5173',
+    origin: '*',
     methods: ['GET', 'POST'],
     credentials: true,
   },
